@@ -22,4 +22,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 > 效果演示
 
-![todolist](http://ooytyiziz.bkt.clouddn.com/ezgif.com-video-to-gif.gif)
+![todolist](001.gif)
