@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>待做清单</title>
+		<!--<link rel="stylesheet" href="node_modules/todomvc-common/base.css">-->
+		<!--<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">-->
+		<!-- CSS overrides - remove if you don't need it -->
+		<!--<link rel="stylesheet" href="css/app.css">-->
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<h1>{{title}}</h1>
+				<input class="new-todo"
+				 placeholder="添加一个待做事项" autofocus 
+				 v-model.trim="newTodo"
+				 @keyup.enter="addTodo" > 
+
+				 <!--v-model是个语法糖，底层为v-bind:value="newTodo" v-on:input="addTodo($event)"-->
+			</header>
+			<!-- This section should be hidden by default and shown when there are todos -->
+			<section class="main">
+				<input class="toggle-all" type="checkbox" v-model="isAll" >
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+					<li v-for="(todo,index) in filteredTodos" 
+					:class="{completed:todo.completed,
+					editing:todo==editedTodo}">
+						<div class="view">
+							<input class="toggle" type="checkbox"
+							v-model="todo.completed">
+							<label @dblclick="editTodo(todo)">{{todo.content}}</label>
+							<button class="destroy" 
+							@click="removeTodo(index)"></button>
+						</div>
+						<input class="edit" 
+						v-model.trim="todo.content"
+						v-focus="todo == editedTodo"
+					    @blur="doneEdit(todo)"
+                        @keyup.enter="doneEdit(todo)"
+                        @keyup.esc="cancelEdit(todo)">
+					</li>
+				</ul>
+			</section>
+			<!-- This footer should hidden by default and shown when there are todos -->
+			<footer class="footer" v-show="todos.length">
+				<!-- This should be `0 items left` by default -->
+				<span class="todo-count"><strong>{{remain}}</strong> {{todos.length>1?'items':'item'}} 未完成</span>
+				<!-- Remove this if you don't implement routing -->
+				<ul class="filters">
+					<li>
+						<a :class="{selected:hashName=='all'}" href="#/">所有</a>
+					</li>
+					<li>
+						<a :class="{selected:hashName=='active'}" href="#/active">未完成</a>
+					</li>
+					<li>
+						<a :class="{selected:hashName=='completed'}" href="#/completed">已完成</a>
+					</li>
+				</ul>
+				<!-- Hidden if no completed items are left ↓ -->
+				<button class="clear-completed" 
+				@click="clear" >清除已完成</button>
+			</footer>
+		</section>
+		<footer class="info">
+			<h1>双击添加待做事项</h1>
+			<!-- Remove the below line ↓ -->
+			<!--<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>-->
+			<!-- Change this out with your name and url ↓ -->
+			<!--<p>Created by <a href="http://todomvc.com">hxvin</a></p>-->
+			<!--<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>-->
+		</footer>
+		<!-- Scripts here. Don't remove ↓ -->
+		<!--<script src="node_modules/todomvc-common/base.js"></script>-->
+		<!--<script src="js/app.js"></script>-->
+	</body>
+</html>
