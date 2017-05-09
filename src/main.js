@@ -2,6 +2,22 @@ import 'todomvc-app-css/index.css'
 
 import Vue from 'vue'
 
+var STORAGE_KEY = 'todos-vuejs-2.0'
+var todoStorage = {
+  fetch: function () {
+    var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    todos.forEach(function (todo, index) {
+      todo.id = index
+    })
+    todoStorage.uid = todos.length
+    return todos
+  },
+  save: function (todos) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+  }
+}
+
+
 
 //状态
 var filters = {
@@ -26,7 +42,7 @@ var filters = {
 let app = new Vue({
   el: '.todoapp',
   data: {
-    msg: 'hello world',
+   
     title: '待做清单',
     newTodo: '',
     todos: [{
@@ -48,7 +64,7 @@ let app = new Vue({
         return this.remain === 0
       },
       set(value) {
-        this.todos.forEach((todo) => {
+        this.todos.forEach((value) => {
           todo.completed = value
         })
       }
