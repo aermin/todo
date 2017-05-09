@@ -22,7 +22,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 > 效果演示
 
-![todolist](https://github.com/Hxvin/todo/blob/master/show/ezgif.com-video-to-gif.gif)
+![todolist](https://github.com/Hxvin/todo/blob/master/show/ezgif.com-video-to-gif%20(1).gif)
 
 
 
