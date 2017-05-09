@@ -22,7 +22,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 > 效果演示
 
-![todolist](http://g.recordit.co/MCPDtBi5ur.gif)
+![todolist](http://g.recordit.co/ueam7G4oE5.gif)
 
 
 
