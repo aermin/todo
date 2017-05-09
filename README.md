@@ -23,3 +23,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 > 效果演示
 
 ![todolist](https://github.com/Hxvin/todo/blob/master/show/001.gif)
+
+还有 点x也能直接删除啦
