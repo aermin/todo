@@ -22,7 +22,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 > 效果演示
 
-![todolist](https://github.com/Hxvin/todo/blob/master/show/001.gif)
+![todolist](http://recordit.co/MCPDtBi5ur)
 
-还有 点x也能直接删除啦
-![](http://g.recordit.co/KmbrG0As8U.gif)
+
+
